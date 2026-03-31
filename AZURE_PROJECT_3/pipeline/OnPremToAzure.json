@@ -98,10 +98,10 @@
 						"filename": "products.csv"
 					},
 					{
-						"filename": "sales_pipelie.csv"
+						"filename": "sales_pipeline.csv"
 					},
 					{
-						"filename": "sales_team.csv"
+						"filename": "sales_teams.csv"
 					},
 					{
 						"filename": "data_dictionary.csv"
