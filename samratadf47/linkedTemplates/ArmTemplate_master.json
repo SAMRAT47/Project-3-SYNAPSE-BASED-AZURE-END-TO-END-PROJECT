@@ -1,0 +1,77 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "samratadf47"
+		},
+		"Link2File_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Link2File'"
+		},
+		"sinkls_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'sinkls'"
+		},
+		"Link2File_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "C:\\Samrat-file-system"
+		},
+		"Link2File_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "data.samrat08@gmail.com"
+		},
+		"sinkls_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://samratlake92.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "samratadf47_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"sinkls_accountKey": {
+						"value": "[parameters('sinkls_accountKey')]"
+					},
+					"Link2File_password": {
+						"value": "[parameters('Link2File_password')]"
+					},
+					"sinkls_properties_typeProperties_url": {
+						"value": "[parameters('sinkls_properties_typeProperties_url')]"
+					},
+					"Link2File_properties_typeProperties_host": {
+						"value": "[parameters('Link2File_properties_typeProperties_host')]"
+					},
+					"Link2File_properties_typeProperties_userId": {
+						"value": "[parameters('Link2File_properties_typeProperties_userId')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

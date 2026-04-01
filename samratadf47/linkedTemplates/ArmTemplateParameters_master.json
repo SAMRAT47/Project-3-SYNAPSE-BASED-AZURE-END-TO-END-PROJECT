@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "samratadf47"
+		},
+		"Link2File_password": {
+			"value": ""
+		},
+		"sinkls_accountKey": {
+			"value": ""
+		},
+		"Link2File_properties_typeProperties_host": {
+			"value": "C:\\Samrat-file-system"
+		},
+		"Link2File_properties_typeProperties_userId": {
+			"value": "data.samrat08@gmail.com"
+		},
+		"sinkls_properties_typeProperties_url": {
+			"value": "https://samratlake92.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
