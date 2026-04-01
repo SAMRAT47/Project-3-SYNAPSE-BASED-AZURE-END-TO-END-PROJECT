@@ -71,6 +71,9 @@
 				"parameters": {
 					"p_file": {
 						"type": "string"
+					},
+					"p_folder": {
+						"type": "string"
 					}
 				},
 				"annotations": [],
@@ -82,7 +85,10 @@
 							"value": "@dataset().p_file",
 							"type": "Expression"
 						},
-						"folderPath": "OnPrem",
+						"folderPath": {
+							"value": "@dataset().p_folder",
+							"type": "Expression"
+						},
 						"fileSystem": "bronze"
 					},
 					"columnDelimiter": ",",
@@ -171,7 +177,8 @@
 								"value": "@pipeline().parameters.files",
 								"type": "Expression"
 							},
-							"batchCount": 4,
+							"isSequential": false,
+							"batchCount": 2,
 							"activities": [
 								{
 									"name": "CopyOnPremToCloud",
@@ -238,6 +245,10 @@
 												"p_file": {
 													"value": "@item().filename",
 													"type": "Expression"
+												},
+												"p_folder": {
+													"value": "@item().folder_name",
+													"type": "Expression"
 												}
 											}
 										}
@@ -255,34 +266,44 @@
 						"type": "array",
 						"defaultValue": [
 							{
-								"filename": "AdventureWorks_Calendar.csv"
+								"filename": "AdventureWorks_Calendar.csv",
+								"folder_name": "Calendar"
 							},
 							{
-								"filename": "AdventureWorks_Customers.csv"
+								"filename": "AdventureWorks_Customers.csv",
+								"folder_name": "Customers"
 							},
 							{
-								"filename": "AdventureWorks_Product_Categories.csv"
+								"filename": "AdventureWorks_Product_Categories.csv",
+								"folder_name": "Product_Categories"
 							},
 							{
-								"filename": "AdventureWorks_Product_Subcategories.csv"
+								"filename": "AdventureWorks_Product_Subcategories.csv",
+								"folder_name": "Product_Subcategories"
 							},
 							{
-								"filename": "AdventureWorks_Products.csv"
+								"filename": "AdventureWorks_Products.csv",
+								"folder_name": "Products"
 							},
 							{
-								"filename": "AdventureWorks_Returns.csv"
+								"filename": "AdventureWorks_Returns.csv",
+								"folder_name": "Returns"
 							},
 							{
-								"filename": "AdventureWorks_Sales_2015.csv"
+								"filename": "AdventureWorks_Sales_2015.csv",
+								"folder_name": "Sales_2015"
 							},
 							{
-								"filename": "AdventureWorks_Sales_2016.csv"
+								"filename": "AdventureWorks_Sales_2016.csv",
+								"folder_name": "Sales_2016"
 							},
 							{
-								"filename": "AdventureWorks_Sales_2017.csv"
+								"filename": "AdventureWorks_Sales_2017.csv",
+								"folder_name": "Sales_2017"
 							},
 							{
-								"filename": "AdventureWorks_Territories.csv"
+								"filename": "AdventureWorks_Territories.csv",
+								"folder_name": "Territories"
 							}
 						]
 					}
