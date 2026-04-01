@@ -12,6 +12,7 @@
 						"value": "@pipeline().parameters.files",
 						"type": "Expression"
 					},
+					"batchCount": 4,
 					"activities": [
 						{
 							"name": "CopyOnPremToCloud",
@@ -92,19 +93,34 @@
 				"type": "array",
 				"defaultValue": [
 					{
-						"filename": "accounts.csv"
+						"filename": "AdventureWorks_Calendar.csv"
 					},
 					{
-						"filename": "products.csv"
+						"filename": "AdventureWorks_Customers.csv"
 					},
 					{
-						"filename": "sales_pipeline.csv"
+						"filename": "AdventureWorks_Product_Categories.csv"
 					},
 					{
-						"filename": "sales_teams.csv"
+						"filename": "AdventureWorks_Product_Subcategories.csv"
 					},
 					{
-						"filename": "data_dictionary.csv"
+						"filename": "AdventureWorks_Products.csv"
+					},
+					{
+						"filename": "AdventureWorks_Returns.csv"
+					},
+					{
+						"filename": "AdventureWorks_Sales_2015.csv"
+					},
+					{
+						"filename": "AdventureWorks_Sales_2016.csv"
+					},
+					{
+						"filename": "AdventureWorks_Sales_2017.csv"
+					},
+					{
+						"filename": "AdventureWorks_Territories.csv"
 					}
 				]
 			}
