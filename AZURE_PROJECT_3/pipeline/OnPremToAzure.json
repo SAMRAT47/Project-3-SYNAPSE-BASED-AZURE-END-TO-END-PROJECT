@@ -12,8 +12,7 @@
 						"value": "@pipeline().parameters.files",
 						"type": "Expression"
 					},
-					"isSequential": false,
-					"batchCount": 2,
+					"isSequential": true,
 					"activities": [
 						{
 							"name": "CopyOnPremToCloud",
@@ -79,10 +78,6 @@
 									"parameters": {
 										"p_file": {
 											"value": "@item().filename",
-											"type": "Expression"
-										},
-										"p_folder": {
-											"value": "@item().folder_name",
 											"type": "Expression"
 										}
 									}

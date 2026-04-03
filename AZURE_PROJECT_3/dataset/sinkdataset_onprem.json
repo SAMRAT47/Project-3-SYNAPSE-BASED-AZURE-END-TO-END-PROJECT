@@ -8,9 +8,6 @@
 		"parameters": {
 			"p_file": {
 				"type": "string"
-			},
-			"p_folder": {
-				"type": "string"
 			}
 		},
 		"annotations": [],
@@ -22,10 +19,7 @@
 					"value": "@dataset().p_file",
 					"type": "Expression"
 				},
-				"folderPath": {
-					"value": "@dataset().p_folder",
-					"type": "Expression"
-				},
+				"folderPath": "OnPrem",
 				"fileSystem": "bronze"
 			},
 			"columnDelimiter": ",",
