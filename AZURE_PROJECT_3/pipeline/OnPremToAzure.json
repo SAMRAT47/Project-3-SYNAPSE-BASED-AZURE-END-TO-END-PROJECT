@@ -79,6 +79,10 @@
 										"p_file": {
 											"value": "@item().filename",
 											"type": "Expression"
+										},
+										"p_folder": {
+											"value": "@item().folder_name",
+											"type": "Expression"
 										}
 									}
 								}
