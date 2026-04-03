@@ -48,8 +48,7 @@
 								"value": "@pipeline().parameters.files",
 								"type": "Expression"
 							},
-							"isSequential": false,
-							"batchCount": 2,
+							"isSequential": true,
 							"activities": [
 								{
 									"name": "CopyOnPremToCloud",
@@ -115,10 +114,6 @@
 											"parameters": {
 												"p_file": {
 													"value": "@item().filename",
-													"type": "Expression"
-												},
-												"p_folder": {
-													"value": "@item().folder_name",
 													"type": "Expression"
 												}
 											}
@@ -233,9 +228,6 @@
 				"parameters": {
 					"p_file": {
 						"type": "string"
-					},
-					"p_folder": {
-						"type": "string"
 					}
 				},
 				"annotations": [],
@@ -247,10 +239,7 @@
 							"value": "@dataset().p_file",
 							"type": "Expression"
 						},
-						"folderPath": {
-							"value": "@dataset().p_folder",
-							"type": "Expression"
-						},
+						"folderPath": "OnPrem",
 						"fileSystem": "bronze"
 					},
 					"columnDelimiter": ",",
